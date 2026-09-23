@@ -15,7 +15,7 @@ The ledger is a SQLite database at `.agent-ledger/ledger.sqlite`. Writes use WAL
 From the project you want agents to work on:
 
 ```bash
-pipx install git+https://github.com/hcsum/agent-ledger.git
+pipx install git+https://github.com/hcsum/leadmode.git
 agent-ledger install
 # Restart Claude Code so it loads the installed hooks and skills.
 agent-ledger demo
@@ -151,8 +151,8 @@ See [SECURITY.md](SECURITY.md) for vulnerability reporting.
 For a manual development install:
 
 ```bash
-git clone https://github.com/hcsum/agent-ledger.git
-cd agent-ledger
+git clone https://github.com/hcsum/leadmode.git
+cd leadmode
 python3 -m pip install -e .
 cd /path/to/target-project
 agent-ledger install
