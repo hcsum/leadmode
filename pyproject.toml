@@ -5,7 +5,7 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "agent-ledger"
 version = "0.1.0"
-description = "A local SQLite coordination ledger for humans and Claude Code sessions"
+description = "LeadMode: turn tickets into planned, delegated, verified agent work"
 readme = "README.md"
 requires-python = ">=3.10"
 license = {text = "MIT"}

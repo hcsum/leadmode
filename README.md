@@ -1,6 +1,12 @@
-# agent-ledger
+# LeadMode
 
-agent-ledger is a local, project-scoped coordination ledger for a human and multiple Claude Code sessions. It gives planners, consultants, and implementation workers one durable place to coordinate without relying on chat memory or an external service.
+> **Congratulations. You're the tech lead now.**
+>
+> You are your own tech lead. Whether you like it or not.
+>
+> Turn a pile of tickets into planned, delegated, verified work.
+
+LeadMode is a local, project-scoped coordination system for a human and multiple Claude Code sessions. Its `agent-ledger` CLI gives planners, consultants, and implementation workers one durable place to coordinate without relying on chat memory or an external service.
 
 The ledger is a SQLite database at `.agent-ledger/ledger.sqlite`. Writes use WAL mode. Runtime state is intentionally gitignored.
 
@@ -18,7 +24,7 @@ agent-ledger-dashboard
 
 Open <http://127.0.0.1:8765>. The demo command adds three generic cards and one open decision so the dashboard is useful immediately.
 
-`agent-ledger install` does four things:
+`agent-ledger install` does five things:
 
 - creates `.agent-ledger/ledger.sqlite`;
 - adds `.agent-ledger/` to the target project's `.gitignore` if needed;
@@ -135,7 +141,7 @@ Treat that flag as unsafe unless another trusted layer provides access control.
 - Notes, decisions, progress, prompts sent with `tell`, and activity metadata are stored locally in plaintext SQLite.
 - Do not put secrets in the ledger.
 - The dashboard is unauthenticated and should stay on loopback.
-- Installed hooks execute the `agent-ledger-hook` command from your environment. Review `.claude/settings.json` before using agent-ledger in an untrusted repository.
+- Installed hooks execute through a project-local wrapper generated under `.agent-ledger/`. Review `.claude/settings.json` before using LeadMode in an untrusted repository.
 - No telemetry, cloud database, business-system integration, deployment integration, or external session registry is used.
 
 See [SECURITY.md](SECURITY.md) for vulnerability reporting.
@@ -154,7 +160,7 @@ agent-ledger install
 
 To uninstall from a target project:
 
-1. Remove only entries whose command is `agent-ledger-hook` from the five event arrays in `.claude/settings.json`.
+1. Remove only entries whose command points to `.agent-ledger/hook` from the five event arrays in `.claude/settings.json`.
 2. Remove `.claude/skills/planner`, `.claude/skills/consult`, and `.claude/skills/worker` if you do not have your own files there.
 3. Remove `.agent-ledger/` if you no longer need its local history.
 4. Run `pipx uninstall agent-ledger` for a pipx installation.

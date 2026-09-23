@@ -1,6 +1,12 @@
-# agent-ledger 中文快速开始
+# LeadMode 中文快速开始
 
-完整文档见 [README.md](README.md)。agent-ledger 是一个项目级、本地 SQLite 协作台账，供人类与多个 Claude Code session 协调 planner、consult、worker 三类工作。
+> **Congratulations. You're the tech lead now.**
+>
+> You are your own tech lead. Whether you like it or not.
+>
+> Turn a pile of tickets into planned, delegated, verified work.
+
+完整文档见 [README.md](README.md)。LeadMode 是一个项目级、本地 SQLite 协作系统，通过 `agent-ledger` CLI 让人类与多个 Claude Code session 协调 planner、consult、worker 三类工作。
 
 ```bash
 pipx install git+https://github.com/hcsum/agent-ledger.git
