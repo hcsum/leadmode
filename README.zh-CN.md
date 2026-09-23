@@ -9,7 +9,7 @@
 完整文档见 [README.md](README.md)。LeadMode 是一个项目级、本地 SQLite 协作系统，通过 `agent-ledger` CLI 让人类与多个 Claude Code session 协调 planner、consult、worker 三类工作。
 
 ```bash
-pipx install git+https://github.com/hcsum/leadmode.git
+pipx install git+https://github.com/hcsum/tech-lead-mode.git
 cd /path/to/your-project
 agent-ledger install
 # 重启 Claude Code
